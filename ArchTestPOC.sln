@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchTestPOC", "ArchTestPOC\ArchTestPOC.csproj", "{B43F3482-53D1-49D1-A16C-A8C97B59653B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArchTestPOC.Tests", "ArchTestPOC.Tests\ArchTestPOC.Tests.csproj", "{6B10D962-D0C5-4114-8D7E-09B4E519CE22}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B43F3482-53D1-49D1-A16C-A8C97B59653B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B43F3482-53D1-49D1-A16C-A8C97B59653B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B43F3482-53D1-49D1-A16C-A8C97B59653B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B43F3482-53D1-49D1-A16C-A8C97B59653B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B10D962-D0C5-4114-8D7E-09B4E519CE22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B10D962-D0C5-4114-8D7E-09B4E519CE22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B10D962-D0C5-4114-8D7E-09B4E519CE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B10D962-D0C5-4114-8D7E-09B4E519CE22}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
