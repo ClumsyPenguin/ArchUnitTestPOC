@@ -23,7 +23,6 @@ app.MapGet("/weatherforecast", () => new WeatherService().GetWeatherForecast())
 
 app.Run();
 
-
 public partial class Program
 {
 };

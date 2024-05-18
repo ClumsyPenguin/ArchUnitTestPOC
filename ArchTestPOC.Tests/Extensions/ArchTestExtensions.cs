@@ -34,11 +34,9 @@ public static class ArchTestExtensions
 
     private static ConditionResult? GetMethodHasUnitTestResult(MethodMember method)
     {
-        if (method.ReturnType is null) return null;
-        
-        return !ReturnTypeHasTestMethod(method.ReturnType) 
-            ? new ConditionResult(method, false) 
-            : new ConditionResult(method, true);
+        return method.ReturnType is null 
+            ? null 
+            : new ConditionResult(method, ReturnTypeHasTestMethod(method.ReturnType));
     }
 
     private static bool ReturnTypeHasTestMethod(IType returnType)
@@ -46,18 +44,12 @@ public static class ArchTestExtensions
         var methodsWithSerializeTestAttribute = TestArchitecture.MethodMembers
             .Where(m => m.Attributes.Any(a => a.Name == nameof(SerializeTestAttribute)))
             .ToList();
-        
-        foreach (var method in methodsWithSerializeTestAttribute)
-        {
-            if (method.AttributeInstances.Any(attr => 
-                    attr.AttributeArguments.Any(arg =>
-                        arg.Value is TypeInstance<Class> underlyingType &&
-                        underlyingType.Type.Name == returnType.Name)))
-            {
-                return true;
-            }
-        }
 
-        return false;
+        return methodsWithSerializeTestAttribute
+            .Select(method => method.AttributeInstances
+                .Any(attr => attr.AttributeArguments
+                    .Any(arg => arg.Value is TypeInstance<Class> underlyingType &&
+                                underlyingType.Type.Name == returnType.Name)))
+            .FirstOrDefault();
     }
 }
